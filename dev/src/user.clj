@@ -9,15 +9,9 @@
     {:main 'my.app
      :output-to "out/main.js"
      :target :browser
-     :verbose false}
-    tutkain.cljs/*compiler-env*)
+     :verbose false})
 
-  (repl/repl (browser/repl-env)
+  (repl/repl (browser/repl-env :launch-browser false)
     :watch "src"
-    :output-dir "out"
-    :need-prompt (constantly false)
-    :prompt (constantly "")
-    :print tutkain.repl/*print*
-    :caught tutkain.repl/*caught*
-    :compiler-env tutkain.cljs/*compiler-env*)
+    :output-dir "out")
   ,)
